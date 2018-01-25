@@ -12,13 +12,13 @@ import { BooksService } from './../../services/books.service';
 import { Book } from '../../models/book.model';
 
 @Component({
-  selector: 'books-page',
+  selector: 'books-component',
   template: `
     <div class="container" fxLayout="column" fxLayoutAlign="center center" >
       <button mat-raised-button routerLink="new">Add new</button>
       <div class="search">
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Search books" #searchField [(ngModel)]="searchTerm">
+          <input matInput placeholder="Search books" #searchField>
         </mat-form-field>
       </div>
       <book-item
@@ -33,7 +33,6 @@ import { Book } from '../../models/book.model';
 })
 export class BooksComponent implements OnInit {
   books$: Observable<Book[]>;
-  searchTerm = '';
   @ViewChild('searchField') searchField;
 
   constructor(private booksService: BooksService) {}

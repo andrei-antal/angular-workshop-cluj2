@@ -29,9 +29,9 @@ import { Book } from '../../models/book.model';
       </mat-card-content>
       <mat-card-content>
         <p class="comment">Rating:</p>
-        <book-rating [(rating)]="movieRating"></book-rating>
+        <book-rating [(rating)]="bookRating"></book-rating>
         <div *ngIf="!commentSaved" class="form">
-          <mat-form-field *ngIf="!commentSaved">
+          <mat-form-field>
             <textarea
               [(ngModel)]="bookComment"
               placeholder="Comment"
@@ -75,7 +75,7 @@ export class BookItemComponent implements OnChanges {
   @Output() deleteBook = new EventEmitter<number>();
 
   private commentSaved = false;
-  private movieRating = 2;
+  private bookRating = 2;
   private bookComment: string;
 
   ngOnChanges(changes) {

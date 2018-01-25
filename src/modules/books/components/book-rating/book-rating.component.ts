@@ -16,7 +16,8 @@ import {
         [ngClass]="{'filled-star': star}"
         (click)="handleClick(starIndex)"
       >
-      star</mat-icon>
+        star
+      </mat-icon>
     </div>
   `,
   styleUrls: ['./book-rating.component.css'],
